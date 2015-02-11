@@ -64,6 +64,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -72,11 +73,23 @@
     <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+        <script>
+          window.modules = {
+            player: {}
+          };
+        </script>
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/lib/messagesBus.min.js"></script>
+        <!-- playlist -->
+        <script src="scripts/player/player/service.player.js"></script>
+        <script src="scripts/player/player/directive.player.js"></script>
+        <script src="scripts/player/playlist/directive.playlist.js"></script>
+        <script src="scripts/player/module.js"></script>
+
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

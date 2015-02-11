@@ -14,13 +14,13 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'youtube-embed'
+    'youtube-embed',
+    'wintubeApp.player'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'scripts/player/views/background.html'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
