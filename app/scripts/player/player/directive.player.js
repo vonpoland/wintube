@@ -13,7 +13,7 @@ window.modules.player.playerDirective = function(messagesBusService, playerServi
 
       $scope.$on("youtube.player.ready", function($event, player) {
         playerService.setPlayer(player);
-      }.bind(this));
+      });
 
       messagesBusService.register("itemSelected", {
         name: 'playlist-itemSelected-subscriber',

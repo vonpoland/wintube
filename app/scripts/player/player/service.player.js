@@ -1,15 +1,26 @@
 window.modules.player.playerService = function() {
-  var player = null;
+  function Player() {
+    this.player = null;
+    this.play = function () {
+      this.player = null;
+      this.pendingAction = function() {
+        if(!this.player) {
+          return;
+        }
+        this.player.playVideo();
+      }
+    };
+    this.doPendingAction = function() {
+      this.pendingAction();
+    }
+  }
+
+  var player = new Player();
   var item = null;
-  var doWhenPlayerReady = null;
 
   this.setPlayer = function(youtubePlayer) {
-    player = youtubePlayer;
-
-    if(typeof (doWhenPlayerReady) === "function") {
-      doWhenPlayerReady(player);
-      doWhenPlayerReady = null;
-    };
+    player.player = youtubePlayer;
+    player.doPendingAction();
   };
 
   this.setItem = function(currentItem) {
@@ -23,14 +34,6 @@ window.modules.player.playerService = function() {
 
     this.youtubeUrl = item.url;
 
-    if(player) {
-      setTimeout(function() {
-        player.playVideo();
-      }, 1000);
-    } else {
-      doWhenPlayerReady = function(player) {
-        player.playVideo();
-      }
-    }
+    player.play()
   }
 };
