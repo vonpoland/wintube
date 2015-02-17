@@ -16,7 +16,7 @@ window.modules.player.playerDirective = function(messagesBusService, playerServi
       });
 
       messagesBusService.register("itemSelected", {
-        name: 'playlist-itemSelected-subscriber',
+        name: 'player-directive',
         handler: onItemSelected.bind(this)
       })
     }
