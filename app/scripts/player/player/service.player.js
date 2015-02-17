@@ -16,7 +16,7 @@ window.modules.player.playerService = function() {
   }
 
   var player = new Player();
-  var item = null;
+  var item = {video: null};
 
   this.setPlayer = function(youtubePlayer) {
     player.player = youtubePlayer;
@@ -24,16 +24,14 @@ window.modules.player.playerService = function() {
   };
 
   this.setItem = function(currentItem) {
-    item = currentItem;
+    item.video = currentItem;
+  };
+
+  this.getItem = function () {
+    return item;
   };
 
   this.play = function() {
-    if(this.youtubeUrl === item.url) {
-      return;
-    }
-
-    this.youtubeUrl = item.url;
-
     player.play()
   }
 };

@@ -1,24 +1,14 @@
-window.modules.player.playerDirective = function(messagesBusService, playerService) {
+window.modules.player.playerDirective = function (playerService) {
   return {
     restrict: 'E',
     controllerAs: 'Player',
-    template: '<div><youtube-video video-url="Player.youtubeUrl"></youtube-video></div>',
+    template: '<div><youtube-video video-url="Player.item.video.url"></youtube-video></div>',
     controller: function ($scope) {
-      this.youtubeUrl = "";
-
-      function onItemSelected(item) {
-        playerService.setItem(item);
-        playerService.play.bind(this)();
-      }
+      this.item = playerService.getItem();
 
       $scope.$on("youtube.player.ready", function($event, player) {
         playerService.setPlayer(player);
       });
-
-      messagesBusService.register("itemSelected", {
-        name: 'player-directive',
-        handler: onItemSelected.bind(this)
-      })
     }
   }
 };

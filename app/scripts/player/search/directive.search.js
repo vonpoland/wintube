@@ -1,4 +1,4 @@
-window.modules.player.searchDirective = function (messagesBusService, searchService) {
+window.modules.player.searchDirective = function (searchService) {
   return {
     restrict: 'E',
     controllerAs: 'Search',
