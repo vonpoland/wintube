@@ -12,6 +12,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
     <!-- endbuild -->
   </head>
   <body ng-app="wintubeApp">
@@ -20,36 +21,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <a class="navbar-brand" href="#/">wintube</a>
-          </div>
-
-          <div class="collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
     <div ng-view=""></div>
     </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -71,30 +45,41 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-        <script>
-          window.modules = {
-            player: {}
-          };
-        </script>
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script>
+      window.modules = {
+        player: {},
+        ui: {}
+      };
+    </script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
-        <!-- playlist -->
+    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+    <!-- ui -->
+    <script src="scripts/ui/draggable/directive.draggable.js"></script>
+    <script src="scripts/ui/module.js"></script>
+
+    <!-- storage -->
+    <script src="scripts/storage/module.js"></script>
+
+    <!-- playlist -->
     <script src="scripts/player/playlist/service.playlist.js"></script>
     <script src="scripts/player/search/service.search.js"></script>
-        <script src="scripts/player/player/service.player.js"></script>
+    <script src="scripts/player/player/service.player.js"></script>
     <script src="scripts/player/search/resource.youtube.js"></script>
     <script src="scripts/player/search/directive.search.js"></script>
     <script src="scripts/player/search/directive.searchResults.js"></script>
-        <script src="scripts/player/player/directive.player.js"></script>
-        <script src="scripts/player/playlist/directive.playlist.js"></script>
-        <script src="scripts/player/module.js"></script>
+    <script src="scripts/player/player/directive.player.js"></script>
+    <script src="scripts/player/playlist/directive.playlist.js"></script>
+    <script src="scripts/player/module.js"></script>
 
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
 
-        <!-- endbuild -->
+    <!-- endbuild -->
 </body>
 </html>

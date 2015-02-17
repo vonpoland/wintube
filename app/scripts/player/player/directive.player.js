@@ -1,6 +1,6 @@
 window.modules.player.playerDirective = function (playerService) {
   return {
-    restrict: 'E',
+    restrict: 'AE',
     controllerAs: 'Player',
     template: '<div><youtube-video video-url="Player.item.video.url"></youtube-video></div>',
     controller: function ($scope) {

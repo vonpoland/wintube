@@ -15,6 +15,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'youtube-embed',
+    'wintubeApp.ui',
     'wintubeApp.player'
   ])
   .config(function ($routeProvider) {

@@ -2,14 +2,14 @@
 
 (function (window, angular) {
   angular
-    .module('wintubeApp.player', ['ngResource'])
+    .module('wintubeApp.player', ['ngResource', 'wintubeApp.storage'])
     .constant('API_KEY', 'AIzaSyD1SZ-MyjkgEWuFxOH7dL1EkuQjeSuxMFc')
     .constant('SEARCH', {
       timeout: 300,
       minKeys: 2
     })
     .service('playlistService', window.modules.player.playlistService)
-    .service('playerService', window.modules.player.playerService)
+    .service('playerService', ['Storage', window.modules.player.playerService])
     .service('searchService', ['$timeout', 'SEARCH', 'YoutubeSearch', window.modules.player.searchService])
     .factory('YoutubeSearch', ['$resource', 'API_KEY', window.modules.player.youtubeResource])
     .directive('searchResults', ['searchService', 'playlistService', window.modules.player.searchResults])
