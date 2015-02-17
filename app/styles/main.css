@@ -81,3 +81,8 @@ body {
     border-bottom: 0;
   }
 }
+
+#player {
+  width: 730px;
+  height: 400px;
+}
