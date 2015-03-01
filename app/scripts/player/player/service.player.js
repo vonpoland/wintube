@@ -1,16 +1,20 @@
-window.modules.player.playerService = function() {
+window.modules.player.playerService = function () {
   function Player() {
     this.player = null;
     this.play = function () {
-      this.player = null;
-      this.pendingAction = function() {
-        if(!this.player) {
+      if (this.player) {
+        this.player.playVideo();
+        return;
+      }
+      
+      this.pendingAction = function () {
+        if (!this.player) {
           return;
         }
         this.player.playVideo();
       }
     };
-    this.doPendingAction = function() {
+    this.doPendingAction = function () {
       this.pendingAction();
     }
   }
@@ -18,12 +22,12 @@ window.modules.player.playerService = function() {
   var player = new Player();
   var item = {video: null};
 
-  this.setPlayer = function(youtubePlayer) {
+  this.setPlayer = function (youtubePlayer) {
     player.player = youtubePlayer;
     player.doPendingAction();
   };
 
-  this.setItem = function(currentItem) {
+  this.setItem = function (currentItem) {
     item.video = currentItem;
   };
 
@@ -31,7 +35,7 @@ window.modules.player.playerService = function() {
     return item;
   };
 
-  this.play = function() {
+  this.play = function () {
     player.play()
   }
 };
