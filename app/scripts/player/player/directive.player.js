@@ -2,7 +2,7 @@ window.modules.player.playerDirective = function (playerService) {
   return {
     restrict: 'AE',
     controllerAs: 'Player',
-    template: '<div id="player"><youtube-video video-url="Player.item.video.url"></youtube-video></div>',
+    template: '<div><div data-content><youtube-video video-url="Player.item.video.url"></youtube-video></div></div>',
     controller: function ($scope) {
       this.item = playerService.getItem();
 

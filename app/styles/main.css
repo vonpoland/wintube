@@ -62,7 +62,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    /*max-width: 730px;*/
   }
 
   /* Remove the padding we set earlier */
@@ -82,7 +82,38 @@ body {
   }
 }
 
+menu {
+  margin: 0;
+  padding: 0;
+}
+
 #player {
   width: 730px;
-  height: 400px;
 }
+
+#playlist {
+  width: 730px;
+}
+
+#searchResults {
+  width: 730px;
+}
+
+.ui-widget-content {
+  position: absolute;
+}
+
+.playlistItem menu {
+  display: inline-block;
+  width: 5%;
+}
+
+.playlistItem menu button {
+  float: right;
+}
+
+.playlistItem .item {
+  display: inline-block;
+  width: 95%;
+}
+

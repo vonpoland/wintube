@@ -3,7 +3,7 @@
 (function (angular) {
   angular
     .module('wintubeApp.storage', [])
-    .factory("Storage", ["$window", function ($window) {
+    .factory('Storage', ['$window', function ($window) {
       return {
         save: function (key, item) {
           if (item) {
@@ -26,6 +26,6 @@
             }
           }
         }
-      }
-    }])
+      };
+    }]);
 }(window.angular));

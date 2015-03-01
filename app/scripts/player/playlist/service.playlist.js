@@ -12,5 +12,14 @@ window.modules.player.playlistService = function (Storage) {
 
   this.getPlaylist = function () {
     return playlist;
-  }
+  };
+
+  this.removeItem = function (item) {
+    var toRemove = playlist.indexOf(item);
+
+    if (toRemove >= 0) {
+      playlist.splice(toRemove, 1);
+      savePlaylist();
+    }
+  };
 };

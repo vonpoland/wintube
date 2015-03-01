@@ -1,6 +1,8 @@
 <div>
-  <div data-player data-draggable="playerDrag" class="ui-widget-content"></div>
-  <div data-playlist data-draggable="playlistDrag" class="ui-widget-content"></div>
-  <search></search>
-  <div data-search-results data-draggable="searchDrag" class="ui-widget-content"></div>
+  <div id="player" data-window data-player data-draggable="playerDrag" class="ui-widget-content"
+       data-handle=".control-panel"></div>
+  <div id="playlist" data-playlist data-draggable="playlistDrag" data-window class="ui-widget-content"
+       data-handle=".control-panel"></div>
+  <div id="searchResults" data-search-results data-draggable="searchDrag" data-window class="ui-widget-content"
+       data-handle=".control-panel"></div>
 </div>
