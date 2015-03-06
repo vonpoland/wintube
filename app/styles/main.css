@@ -82,6 +82,9 @@ body {
   }
 }
 
+.pointer {
+  cursor: pointer;
+}
 menu {
   margin: 0;
   padding: 0;
@@ -100,7 +103,12 @@ menu {
 }
 
 .ui-widget-content {
-  position: absolute;
+  position: absolute !important;
+  overflow: hidden;
+}
+
+.ui-widget-content.auto-height {
+  height: auto !important;
 }
 
 .playlistItem menu {
@@ -116,4 +124,3 @@ menu {
   display: inline-block;
   width: 95%;
 }
-

@@ -7,7 +7,10 @@ window.modules.ui.draggable = function (Storage, zIndex) {
           element.zIndex(zIndex++);
         },
         stop: function () {
-          Storage.save(attr.draggable, element.position());
+          var ui = Storage.get(attr.id) || {};
+
+          ui.position = element.position();
+          Storage.save(attr.id, ui);
         }
       };
 
@@ -17,10 +20,10 @@ window.modules.ui.draggable = function (Storage, zIndex) {
 
       element.draggable(options);
 
-      var previousPosition = Storage.get(attr.draggable);
+      var ui = Storage.get(attr.id);
 
-      if (previousPosition) {
-        element.offset(previousPosition);
+      if (ui && ui.position) {
+        element.offset(ui.position);
       }
     }
   }

@@ -2,7 +2,7 @@
 
 (function (window, angular) {
   angular
-    .module('wintubeApp.player', ['ngResource', 'wintubeApp.storage'])
+    .module('wintubeApp.player', ['ngResource', 'wintubeApp.storage', 'ui.sortable'])
     .constant('API_KEY', 'AIzaSyD1SZ-MyjkgEWuFxOH7dL1EkuQjeSuxMFc')
     .constant('SEARCH', {
       timeout: 300,
@@ -15,5 +15,5 @@
     .directive('searchResults', ['searchService', 'playlistService', window.modules.player.searchResults])
     .directive('search', ['searchService', window.modules.player.searchDirective])
     .directive('player', ['playerService', window.modules.player.playerDirective])
-    .directive('playlist', ['playerService', 'playlistService', window.modules.player.playlistDirective]);
+    .directive('playlist', ['playerService', 'playlistService', '$timeout', window.modules.player.playlistDirective]);
 }(window, window.angular));

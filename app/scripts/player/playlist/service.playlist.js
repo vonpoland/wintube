@@ -1,9 +1,9 @@
 window.modules.player.playlistService = function (Storage) {
   function savePlaylist() {
-    Storage.save('playlist', playlist);
+    Storage.save('playlistItems', playlist);
   }
 
-  var playlist = Storage.get('playlist') || [];
+  var playlist = Storage.get('playlistItems') || [];
 
   this.addItem = function (item) {
     playlist.push(item);
@@ -22,4 +22,6 @@ window.modules.player.playlistService = function (Storage) {
       savePlaylist();
     }
   };
+
+  this.savePlaylist = savePlaylist;
 };
