@@ -1,8 +1,8 @@
 window.modules.ui.resizable = function (Storage, zIndex) {
   return {
     restrict: 'A',
-    controllerAs: 'resizableCtrl',
-    link: function (scope, element, attr) {
+    require: "scrollable",
+    link: function (scope, element, attr, scrollableCtrl) {
       var options = {
         start: function () {
           element.zIndex(zIndex++);
@@ -12,6 +12,7 @@ window.modules.ui.resizable = function (Storage, zIndex) {
 
           ui.size = params.size;
           Storage.save(attr.id, ui);
+          scrollableCtrl.update();
         },
         minHeight: 100,
         minWidth: 150

@@ -98,6 +98,15 @@ menu {
   width: 730px;
 }
 
+#playlist .frame {
+  height: 100%;
+  padding-right: 1em;
+}
+
+#playlist .fakeElement {
+  height: 21px;
+}
+
 #searchResults {
   width: 730px;
 }
