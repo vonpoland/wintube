@@ -104,7 +104,24 @@ menu {
 }
 
 #playlist .fakeElement {
+  height: 42px;
+}
+
+#playlist-control-panel {
+  position: absolute;
   height: 21px;
+  background-color: rgb(20, 130, 237);
+  width: 100%;
+  bottom: 0;
+}
+
+#playlist-control-panel menu {
+  float: left;
+  display: block;
+}
+
+#playlist .playlistItem.selected {
+  background-color: rgb(20, 130, 237);
 }
 
 #searchResults {
