@@ -15,7 +15,7 @@ window.modules.ui.resizable = function (Storage, zIndex) {
           scrollableCtrl.update();
         },
         minHeight: 100,
-        minWidth: 150
+        minWidth: 400
       };
 
       element.resizable(options);

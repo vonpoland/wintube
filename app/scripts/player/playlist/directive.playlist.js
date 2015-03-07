@@ -2,9 +2,9 @@ window.modules.player.playlistDirective = function (playerService, playlistServi
   return {
     restrict: 'AE',
     controllerAs: 'Playlist',
-    template: '<div class="frame"><div id="playlist-control-panel">' +
+    template: '<div class="frame" data-content><div id="playlist-control-panel">' +
     '<menu><button ng-click="Playlist.removeSelectedItem()">-</button></menu><search></search></div>' +
-    '<div data-content>' +
+    '<div>' +
     '<div ui-sortable="Playlist.sortableOptions" ng-model="Playlist.items">' +
     '<div class="playlistItem" ng-repeat="item in Playlist.items track by $index" ng-class="{selected: item.selected}">' +
     '<div ng-click="Playlist.selectItem(item)" ng-dblclick="Playlist.itemChange(item)" class="item pointer">{{item.title}}</div>' +
