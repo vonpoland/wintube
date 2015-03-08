@@ -6,10 +6,10 @@ window.modules.player.playlistDirective = function (playerService, playlistServi
     '<menu><button ng-click="Playlist.removeSelectedItem()">-</button></menu><search></search></div>' +
     '<div>' +
     '<div ui-sortable="Playlist.sortableOptions" ng-model="Playlist.items">' +
-    '<div class="playlistItem" ng-repeat="item in Playlist.items track by $index" ng-class="{selected: item.selected}">' +
-    '<div ng-click="Playlist.selectItem(item)" ng-dblclick="Playlist.itemChange(item)" class="item pointer">{{item.title}}</div>' +
+    '<div class="playlistItem pointer" ng-repeat="item in Playlist.items track by $index" ng-class="{selected: item.selected}" ng-click="Playlist.selectItem(item)" ng-dblclick="Playlist.itemChange(item)">' +
+    '<div class="item truncate">{{item.title}}</div>' +
     '<menu>0:00</menu>' +
-    '</div>' +
+    '<div class="clear"></div></div>' +
     '</div><div class="fakeElement"></div>' +
     '</div></div></div>',
     controller: function () {
