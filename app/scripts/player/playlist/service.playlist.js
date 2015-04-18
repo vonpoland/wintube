@@ -1,11 +1,30 @@
 window.modules.player.playlistService = function (Storage) {
   function savePlaylist() {
-
     Storage.save('playlistItems', playlist);
   }
 
-  var playlist = Storage.get('playlistItems') || [];
+  function getPlaylist() {
+    var savedPlaylist = Storage.get('playlistItems');
+
+    if (!savedPlaylist) {
+      return [];
+    }
+
+    var length = savedPlaylist.length;
+
+    for (var i = 0; i < length; i++) {
+      var item = savedPlaylist[i];
+      if (item.selected) {
+        selectedItems.push(item);
+        break;
+      }
+    }
+
+    return savedPlaylist;
+  }
+
   var selectedItems = [];
+  var playlist = getPlaylist();
 
   this.addItem = function (item) {
     playlist.push(item);
@@ -36,5 +55,6 @@ window.modules.player.playlistService = function (Storage) {
 
     item.selected = true;
     selectedItems.push(item);
+    savePlaylist();
   }
 };

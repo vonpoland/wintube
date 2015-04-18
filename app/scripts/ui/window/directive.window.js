@@ -1,5 +1,5 @@
 window.modules.ui.window = function ($compile, Storage) {
-  var WINDOW_TEMPLATE = '<div class="control-panel"><button ng-click="toggle()">{{ whenHidden() }}</button></div>';
+  var WINDOW_TEMPLATE = '<div class="control-panel"><button class="to-right" ng-click="toggle()"></button></div>';
 
   return {
     restrict: 'A',

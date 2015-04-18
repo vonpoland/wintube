@@ -126,20 +126,16 @@ menu {
   display: block;
 }
 
-#playlist .playlistItem.selected {
-  background-color: rgb(20, 130, 237);
-}
-
 #searchResults {
   width: 730px;
 }
 
-.ui-widget-content {
+.widget-content {
   position: absolute !important;
   overflow: hidden;
 }
 
-.ui-widget-content.auto-height {
+.widget-content.auto-height {
   height: auto !important;
 }
 
@@ -160,10 +156,19 @@ menu {
   width: 90%;
 }
 
+.widget-content .control-panel button {
+  margin-right: 15px;
+  margin-top: 3px;
+}
+
 .truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.to-right {
+  float:right;
 }
 
 .clear {

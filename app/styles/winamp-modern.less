@@ -1,0 +1,73 @@
+@background-style: url("winamp-modern/player/ct_bg.png");
+@title-bar-background: url("winamp-modern/window/titlebar.png");
+@playlist-item-color: white;
+@playlist-font-family: "Arial", "sans-serif";
+@playlist-font-size: 11px;
+@selected-item-playlist: rgb(103, 136, 201);
+@control-panel-background-color: rgb(24, 41, 80);
+
+.winamp-modern {
+  button {
+    &:focus {
+      outline:none;
+    }
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+  }
+  .left-border {
+    float: left;
+  }
+
+  .right-border {
+    float: right;
+  }
+  .center-content {
+    display: inline-block;
+  }
+
+  .frame {
+    background: @background-style;
+  }
+
+  .playlistItem {
+    &.selected {
+      background-color: @selected-item-playlist;
+    }
+
+    color: @playlist-item-color;
+    font-family: @playlist-font-family;
+    font-size: @playlist-font-size;
+  }
+
+  .control-panel {
+    height: 18px;
+    background-color: @control-panel-background-color;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    .left-border, .right-border {
+
+    }
+    .left-border, .right-border {
+
+    }
+
+    .center-content {
+
+    }
+    .right-border {
+
+    }
+    button {
+      width: 11px;
+      height: 11px;
+      background: @title-bar-background;
+      background-position-x: 0px;
+      background-position-y: -60px;
+    }
+  }
+}
